@@ -1,14 +1,6 @@
 <template>
   <div id="app">
-    counter: {{ counter }}
-    <button @click="increment">increment</button>
-    <div>name: {{ monPrenom }}</div>
-    <div>
-      <input v-model="newName" @keydown.enter="changeFirstName(newName)" />
-    </div>
-    <button @click="fetchPost">GET POST</button>
-    <div>{{ $store.state.auth.token }}</div>
-    <div>{{ $store.getters.fullName }}</div>
+    <router-view />
   </div>
 </template>
 
