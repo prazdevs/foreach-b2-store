@@ -8,7 +8,6 @@
     <div v-else>
       {{ error }}
     </div>
-    <div v-for="(o,idx) in obj" :key="idx">{{ o }}</div>
   </div>
 </template>
 
