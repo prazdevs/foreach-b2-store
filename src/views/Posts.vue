@@ -3,6 +3,7 @@
     <ul v-if="!error">
       <li v-for="post in posts" :key="post.id">
         {{ post.title }}
+        <button @click="deletePost(post.id)">X</button>
       </li>
     </ul>
     <div v-else>
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-import { getAllPosts } from "../apis/posts";
+import { getAllPosts, deletePost } from "../apis/posts";
 
 export default {
   data() {
@@ -29,6 +30,13 @@ export default {
         this.error = e;
       }
     },
+    async deletePost(id) {
+      try {
+        await deletePost(id)
+      } catch (e) {
+        // this.error = e;
+      }
+    }
   },
   async mounted() {
     await this.getPosts();
