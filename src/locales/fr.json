@@ -1,0 +1,7 @@
+{
+  "message": "bonjour i18n !!",
+  "nested": {
+    "message": "je suis imbriqué"
+  },
+  "changeLangBtn": "Changer la langue"
+}

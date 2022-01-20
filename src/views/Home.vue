@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>{{ $t('message') }}</div>
+    <div>{{ $t('nested.message') }}</div>
+    <v-btn @click="toggleLang">{{ $t('changeLangBtn') }}</v-btn>
     <router-link
       v-for="{ name, label } in routes"
       :to="{ name }"
@@ -22,5 +25,14 @@ export default {
       ],
     }
   },
+  methods: {
+    toggleLang() {
+      if(this.$i18n.locale === 'fr') {
+        this.$i18n.locale = 'en'
+      } else {
+        this.$i18n.locale = 'fr'
+      }
+    }
+  }
 }
 </script>

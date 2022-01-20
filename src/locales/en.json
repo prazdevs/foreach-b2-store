@@ -1,0 +1,7 @@
+{
+  "message": "hello i18n !!",
+  "nested": {
+    "message": "i am nested"
+  },
+  "changeLangBtn": "Change language"
+}
