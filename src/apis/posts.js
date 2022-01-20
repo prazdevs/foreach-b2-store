@@ -2,9 +2,20 @@ import axios from 'axios'
 
 const postsInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/posts/',
+  headers: {
+    Authorization: 'Bearer dsgdsoijofqzER34TG34G2ABGZ2G42G',
+  },
 })
 
-postsInstance.interceptors
+postsInstance.interceptors.request.use((config) => {
+  // Je peux intéragir sur la config et empecher la requete de partir
+  // si je ne renvoie pas la config
+  return config
+},
+(error) => {
+  return Promise.reject(error)
+})
+
 
 export async function getPost(id) {
   try {
