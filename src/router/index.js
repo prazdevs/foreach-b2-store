@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import * as names from './names'
+
 import Home from '../views/Home'
 import About from '../views/About'
 import Post from '../views/Post'
@@ -11,9 +13,9 @@ Vue.use(VueRouter)
 
 
 const routes = [
-  { path: '/postform', component: PostForm },
-  { path: '/posts', component: Posts },
-  { path: '/post/:id', component: Post },
+  { path: '/postform',name: names.POSTFORM, component: PostForm },
+  { path: '/posts', name: names.POSTS ,component: Posts },
+  { path: '/post/:id', name: names.POST, component: Post },
   { path: '/about', component: About },
   { path: '/', component: Home },
 ]

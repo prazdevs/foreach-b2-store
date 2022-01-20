@@ -2,7 +2,9 @@
   <div>
     <ul v-if="!error">
       <li v-for="post in posts" :key="post.id">
-        {{ post.title }}
+        <router-link :to="{ name: postRoute, params: { id: post.id }}">
+          {{ post.title }}
+        </router-link>
         <v-btn icon elevation="2" @click="deletePost(post.id)">
           <v-icon>
             mdi-delete
@@ -17,11 +19,13 @@
 </template>
 
 <script>
+import { POST } from '../router/names'
 import { getAllPosts, deletePost } from "../apis/posts";
 
 export default {
   data() {
     return {
+      postRoute: POST,
       posts: [],
       error: "",
     };

@@ -1,5 +1,11 @@
 <template>
   <div>
+    <v-btn @click="goBack">
+      <v-icon>
+        mdi-arrow-left
+      </v-icon>
+      RETOUR
+    </v-btn>
     <div v-if="error">
       {{ error }}
     </div>
@@ -22,6 +28,9 @@ export default {
     };
   },
   methods: {
+    goBack() {
+      this.$router.go(-1)
+    },
     async getCurrentPost() {
       try {
         this.post = await getPost(this.$route.params.id)
