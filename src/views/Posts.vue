@@ -3,7 +3,11 @@
     <ul v-if="!error">
       <li v-for="post in posts" :key="post.id">
         {{ post.title }}
-        <button @click="deletePost(post.id)">X</button>
+        <v-btn icon elevation="2" @click="deletePost(post.id)">
+          <v-icon>
+            mdi-delete
+          </v-icon>
+        </v-btn>
       </li>
     </ul>
     <div v-else>

@@ -1,20 +1,15 @@
 <template>
-<div>This is the home page
-  <custom-button @click="logClick">hello</custom-button>
-</div>
+  <hello-world />
 </template>
 
 <script>
-import CustomButton from "../components/CustomButton"
+  import HelloWorld from '../components/HelloWorld'
 
-export default {
-  components: { 
-    CustomButton
-  },
-  methods: {
-    logClick() {
-      console.log('clicked');
-    }
+  export default {
+    name: 'Home',
+
+    components: {
+      HelloWorld,
+    },
   }
-}
 </script>
