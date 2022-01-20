@@ -19,6 +19,7 @@
 
 <script>
 import { getPost } from '../apis/posts'
+import { ERROR } from '../router/names';
 
 export default {
   data() {
@@ -35,6 +36,7 @@ export default {
       try {
         this.post = await getPost(this.$route.params.id)
       } catch(e) {
+        this.$router.push({ name: ERROR, query: { error: e } })
         this.error = e
       }
     }
