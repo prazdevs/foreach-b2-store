@@ -20,7 +20,7 @@
 
 <script>
 import { POST } from '../router/names'
-import { getAllPosts, deletePost } from "../apis/posts";
+import { getAllPosts, deletePost } from "@/apis/posts";
 
 export default {
   data() {
@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     async getPosts() {
+      this.posts = []
       try {
         this.posts = await getAllPosts();
       } catch (e) {
