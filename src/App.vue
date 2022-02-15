@@ -39,17 +39,19 @@
 
     <v-main>
       <router-view/>
+      <UsingStore />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import UsingStore from "./components/UsingStore.vue";
 
 export default {
-  name: 'App',
-
-  data: () => ({
+    name: "App",
+    data: () => ({
     //
-  }),
+    }),
+    components: { UsingStore }
 };
 </script>

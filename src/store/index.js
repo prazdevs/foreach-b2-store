@@ -4,7 +4,7 @@ import createPersistedState from "vuex-persistedstate";
 
 import { authModule } from "./auth";
 
-import { INCREMENT_COUNTER, CHANGE_FIRST_NAME, SET_POST } from "./mutations";
+import { INCREMENT_COUNTER, CHANGE_FIRST_NAME, SET_POST, ADD_TO_SELECTED } from "./mutations";
 
 Vue.use(Vuex);
 
@@ -14,6 +14,7 @@ export default new Vuex.Store({
     firstName: "Sacha",
     lastName: "Bouillez",
     post: {},
+    selected: []
   },
   getters: {
     fullName(state) {
@@ -30,6 +31,9 @@ export default new Vuex.Store({
     [SET_POST](state, post) {
       state.post = post;
     },
+    [ADD_TO_SELECTED](state, number) {
+      state.selected.push(number);
+    }
   },
   actions: {
     async getPost(context) {
@@ -48,6 +52,6 @@ export default new Vuex.Store({
     auth: authModule,
   },
   plugins: [createPersistedState({
-    paths: ['counter']
+    paths: ['']
   })]
 });

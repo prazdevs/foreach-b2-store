@@ -16,7 +16,11 @@ postsInstance.interceptors.request.use((config) => {
   return Promise.reject(error)
 })
 
-
+/**
+ * Gets a single post
+ * @param {string} id id of the post
+ * @returns {Object} fetched post
+ */
 export async function getPost(id) {
   try {
     const { data } = await postsInstance.get(`/${id}`)
