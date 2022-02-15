@@ -4,6 +4,7 @@
     <!-- <v-btn v-for="n in numbers" :key="n" :disabled="isSelected(n)" @click="select(n)">
       {{ n }}
     </v-btn> -->
+    <v-btn class="unique" @click="$emit('be-unique', 'zéro originalité')">bouton unique</v-btn>
   </div>
 </template>
 
@@ -29,9 +30,15 @@ export default {
     isSelected(n) {
       return this.selected.includes(n)
     },
+    increment() {
+      if (this.counter < 5) {
+        console.log('INCREMENTED')
+        this.incrementCounter();
+      }
+    },
     ...mapMutations({
       select: ADD_TO_SELECTED,
-      increment: INCREMENT_COUNTER,
+      incrementCounter: INCREMENT_COUNTER,
     })
   }
 }
